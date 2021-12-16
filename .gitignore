@@ -1,0 +1,6 @@
+*.DSYM
+*.DS_STORE
+*.idea
+
+*.o
+*.a
