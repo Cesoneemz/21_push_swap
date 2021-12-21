@@ -6,27 +6,28 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:06:25 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/16 17:58:41 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/22 00:37:59 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
-static t_bool	ft_check_only_spaces(char *str)
-{
-	int	index;
+// static t_bool	ft_check_only_spaces(char *str)
+// {
+// 	int	index;
 
-	index = 0;
-	while (str[index] != '\0')
-	{
-		if (str[index] == '\n' || str[index] == '\t' || str[index] == '\v' \
-		|| str[index] == ' ' || str[index] == '\r' || str[index] == '\f')
-			index++;
-		else
-			return (true);
-	}
-	return (false);
-}
+// 	index = 0;
+// 	while (str[index] != '\0')
+// 	{
+// 		if (str[index] == '\n' || str[index] == '\t' || str[index] == '\v' \
+// 		|| str[index] == ' ' || str[index] == '\r' || str[index] == '\f')
+// 			index++;
+// 		else
+// 			return (true);
+// 	}
+// 	return (false);
+// }
 
 static t_bool	ft_check_duplicates(int argc, char **argv)
 {
@@ -61,7 +62,7 @@ static t_bool	ft_check_max_min_int(char **argv)
 	while (argv[index])
 	{
 		nbr = ft_long_atoi(argv[index]);
-		if (argv[index] >= INT_MAX || argv[index] <= INT_MIN)
+		if (nbr >= INT_MAX || nbr <= INT_MIN)
 			return (false);
 		index++;
 	}
@@ -71,17 +72,23 @@ static t_bool	ft_check_max_min_int(char **argv)
 t_bool	ft_validate_data(int argc, char **argv)
 {
 	int	index;
+	int	jndex;
 
 	index = 1;
 	if (argc < 2)
 		return (false);
 	while (argv[index])
 	{
-		if (!ft_isdigit(argv[index]) && !ft_check_only_spaces(argv[index]))
-			return (false);
+		jndex = 0;
+		while (argv[index][jndex])
+		{
+			if (!ft_isdigit(argv[index][jndex]))
+				return (false);
+			jndex++;
+		}
 		index++;
 	}
 	if (!ft_check_duplicates(argc, argv) && !ft_check_max_min_int(argv))
-		return (true);
-	return (false);
+		return (false);
+	return (true);
 }

@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:03:45 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/16 18:01:36 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/22 00:21:47 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,17 @@ int	ft_write_error(int code)
 
 int	main(int argc, char **argv)
 {
+	int			*str;
+	t_stacks	*stacks;
+
 	if (argc < 2)
 		exit(EXIT_FAILURE);
 	if (!ft_validate_data(argc, argv))
 		return (ft_write_error(-1));
+	str = ft_sort_str(argc, argv);
+	if (!str)
+		return (0);
+	stacks = ft_create_stacks(argc, argv, str);
+	if (!stacks)
+		return (0);
 }

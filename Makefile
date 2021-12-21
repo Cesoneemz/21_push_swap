@@ -6,8 +6,40 @@
 #    By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 14:59:03 by wlanette          #+#    #+#              #
-#    Updated: 2021/12/11 15:04:05 by wlanette         ###   ########.fr        #
+#    Updated: 2021/12/22 00:29:03 by wlanette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
+SRCS		= ./srcs/main.c ./srcs/ft_utils.c ./srcs/ft_validators.c \
+			  ./srcs/ft_check_is_sorted.c ./srcs/ft_push_treatment.c \
+			  ./srcs/ft_stack_treatment.c ./srcs/ft_stack_utils.c \
+			  ./srcs/ft_swap_treatment.c
+OBJS		= $(SRCS:.c=.o)
+
+LIBFT		= ./libft/libft.a
+
+INCS		= ./includes/
+INCS_HEADER	= ./includes/push_swap.h
+
+CC			= gcc
+CFLAGS		= -Wall -Wextra -Werror -I$(INCS)
+RM			= rm -rf
+
+$(NAME):	$(OBJS) $(INCS_HEADER) $(LIBFT)
+			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+			make bonus -C ./libft/
+
+clean:		
+			make clean -C ./libft/
+			$(RM) $(OBJS)
+
+fclean:		clean
+			make fclean -C ./libft/
+			$(RM) $(NAME)
+
+re:			fclean all 
+
+.PHONY:		all clean fclean re

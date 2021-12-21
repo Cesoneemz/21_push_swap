@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/16 18:05:37 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/22 00:27:09 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,26 @@ typedef enum s_bool
 	true = 1
 }				t_bool;
 
+/* STACKS INITIALIZATION */
+
+t_stacks		*ft_create_stacks(int argc, char **argv, int *result);
+t_stack			*ft_create_stack(int value);
+
 /* VALIDATION */
 
 t_bool			ft_validate_data(int argc, char **argv);
+int				*ft_sort_str(int argc, char **argv);
 
 /* UTILS */
 
 int				ft_strcmp(char *s1, char *s2);
 long long int	ft_long_atoi(const char *str);
+
+/* STACK UTILS */
+
+int				ft_get_stack_size(t_stack *stack);
+t_stack			*ft_top_stack(t_stack *stack);
+void			ft_pop_back(t_stack **stack);
+void			ft_push_back(t_stack *stack, int data);
 
 #endif
