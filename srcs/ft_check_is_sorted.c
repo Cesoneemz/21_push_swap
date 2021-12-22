@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 22:29:36 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 00:30:01 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/22 16:15:47 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static t_bool	ft_check_sorted(const int *result, int size)
 	{
 		if (result[index] > result[index + 1])
 			return (false);
+		index++;
 	}
 	return (true);
 }

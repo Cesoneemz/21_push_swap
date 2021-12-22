@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:03:45 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 00:21:47 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/22 16:48:09 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,8 @@ int	main(int argc, char **argv)
 	stacks = ft_create_stacks(argc, argv, str);
 	if (!stacks)
 		return (0);
+	if (stacks->size <= 5)
+		ft_sort_small_stack(stacks);
+	free(str);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:46:18 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 00:31:38 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/22 17:28:37 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_push_back(t_stack *stack, int data)
 	node = (t_stack *)malloc(sizeof(t_stack));
 	while (stack->next)
 		stack = stack->next;
-	stack->prev = node;
+	stack->next = node;
 	node->prev = stack;
 	node->next = NULL;
 	node->order = -1;

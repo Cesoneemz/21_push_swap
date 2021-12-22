@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 00:27:09 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/22 16:48:01 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,26 @@ int				ft_get_stack_size(t_stack *stack);
 t_stack			*ft_top_stack(t_stack *stack);
 void			ft_pop_back(t_stack **stack);
 void			ft_push_back(t_stack *stack, int data);
+
+/* OPERATIONS */
+
+void			ft_sa(t_stack **stack);
+void			ft_sb(t_stack **stack);
+void			ft_ss(t_stack **a, t_stack **b);
+
+void			ft_pa(t_stack **a, t_stack **b);
+void			ft_pb(t_stack **a, t_stack **b);
+
+void			ft_ra(t_stack **a);
+void			ft_rb(t_stack **b);
+void			ft_rr(t_stack **a, t_stack **b);
+
+void			ft_rra(t_stack **a);
+void			ft_rra(t_stack **b);
+void			ft_rrr(t_stack **a, t_stack **b);
+
+/* SORTING ALGORITHMS */
+
+void			ft_sort_small_stack(t_stacks *stacks);
 
 #endif
