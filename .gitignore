@@ -1,8 +1,12 @@
 *.DSYM
 *.DS_STORE
 *.idea
+*.vscode
 
 *.o
 *.a
 
 checker_Mac
+test.sh
+
+push_swap_checker/

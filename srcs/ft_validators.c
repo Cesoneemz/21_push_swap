@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:06:25 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 00:37:59 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/23 13:53:27 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@
 // 	while (str[index] != '\0')
 // 	{
 // 		if (str[index] == '\n' || str[index] == '\t' || str[index] == '\v' \
-// 		|| str[index] == ' ' || str[index] == '\r' || str[index] == '\f')
+// 		|| str[index] == ' ' || str[index] == '\r' || str[index] == '\f' \
+// 		|| ft_isdigit(str[index]))
 // 			index++;
 // 		else
-// 			return (true);
+// 			return (false);
 // 	}
-// 	return (false);
+// 	return (true);
 // }
 
 static t_bool	ft_check_duplicates(int argc, char **argv)

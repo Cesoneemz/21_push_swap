@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 16:48:01 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/23 19:07:01 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,10 @@ void			ft_rrr(t_stack **a, t_stack **b);
 /* SORTING ALGORITHMS */
 
 void			ft_sort_small_stack(t_stacks *stacks);
+void			ft_sort_big_stack(int argc, t_stacks *stacks);
+
+/* FREE ALL */
+
+void			ft_free_stacks(t_stacks **stacks);
 
 #endif

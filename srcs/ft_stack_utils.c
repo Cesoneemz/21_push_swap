@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:46:18 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 17:28:37 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/23 19:06:23 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,33 @@ void	ft_push_back(t_stack *stack, int data)
 	node->next = NULL;
 	node->order = -1;
 	node->data = data;
+}
+
+void	ft_free_stacks(t_stacks **stacks)
+{
+	t_stack	*tmp;
+	t_stack	*st_a;
+	t_stack	*st_b;
+
+	if ((*stacks)->a)
+	{
+		st_a = (*stacks)->a;
+		while (st_a)
+		{
+			tmp = (st_a)->next;
+			free(st_a);
+			st_a = tmp;
+		}
+	}
+	if ((*stacks)->b)
+	{
+		st_b = (*stacks)->b;
+		while (st_b)
+		{
+			tmp = (st_b)->next;
+			free(st_b);
+			st_b = tmp;
+		}
+	}
+	free(*stacks);
 }

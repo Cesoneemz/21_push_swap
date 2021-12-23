@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 00:04:30 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 00:25:17 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/23 14:11:07 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_pa(t_stack **a, t_stack **b)
 			*a = ft_create_stack(tmp_data);
 		top_stack_a = ft_top_stack(*a);
 		top_stack_a->order = tmp_order;
-		write(1, "pa\n", 1);
+		write(1, "pa\n", 3);
 	}
 }
 
@@ -54,6 +54,6 @@ void	ft_pb(t_stack **a, t_stack **b)
 			*b = ft_create_stack(tmp_data);
 		top_stack_b = ft_top_stack(*b);
 		top_stack_b->order = tmp_order;
-		write(1, "pb\n", 1);
+		write(1, "pb\n", 3);
 	}
 }
