@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 17:27:48 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/16 18:01:44 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/23 19:28:44 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,26 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s2[index] - s1[index]);
 }
 
-long long int	ft_long_atoi(const char *str)
+long	ft_long_atoi(const char *str)
 {
-	long long int	index;
-	int				b;
-	int				signe;
+	long		res;
+	long		n;
 
-	signe = 1;
-	b = 0;
-	index = 0;
-	while (((char)str[b] >= 9 && (char)str[b] <= 13) || (char)str[b] == ' ')
-		b++;
-	if ((char)str[b] == '-' || (char)str[b] == '+')
+	while (*str == ' ' || *str == '\t' || *str == '\r'
+		|| *str == '\n' || *str == '\v' || *str == '\f')
+		str++;
+	res = 0;
+	n = 1;
+	if (*str == '-' || *str == '+')
 	{
-		if ((char)str[b] == '-')
-			signe *= -1;
-		b++;
+		if (*str == '-')
+			n = -1;
+		str++;
 	}
-	while ((char)str[b] >= '0' && (char)str[b] <= '9')
+	while (*str && *str >= '0' && *str <= '9')
 	{
-		index = (index * 10) + (char)str[b] - '0';
-		b++;
+		res = res * 10 + (*str - '0');
+		str++;
 	}
-	return (index * signe);
+	return (n * res);
 }

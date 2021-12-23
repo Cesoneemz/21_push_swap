@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:06:25 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/23 13:53:27 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/23 19:33:24 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,14 @@ static t_bool	ft_check_duplicates(int argc, char **argv)
 
 static t_bool	ft_check_max_min_int(char **argv)
 {
-	int	index;
-	int	nbr;
+	int		index;
+	long	nbr;
 
 	index = 0;
 	while (argv[index])
 	{
 		nbr = ft_long_atoi(argv[index]);
-		if (nbr >= INT_MAX || nbr <= INT_MIN)
+		if (nbr > INT_MAX || nbr < INT_MIN)
 			return (false);
 		index++;
 	}
@@ -89,7 +89,7 @@ t_bool	ft_validate_data(int argc, char **argv)
 		}
 		index++;
 	}
-	if (!ft_check_duplicates(argc, argv) && !ft_check_max_min_int(argv))
+	if (!ft_check_duplicates(argc, argv) || !ft_check_max_min_int(argv))
 		return (false);
 	return (true);
 }

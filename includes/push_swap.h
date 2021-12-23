@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/23 19:07:01 by wlanette         ###   ########.fr       */
+/*   Updated: 2021/12/23 19:29:02 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int				*ft_sort_str(int argc, char **argv);
 /* UTILS */
 
 int				ft_strcmp(char *s1, char *s2);
-long long int	ft_long_atoi(const char *str);
+long int		ft_long_atoi(const char *str);
 
 /* STACK UTILS */
 
