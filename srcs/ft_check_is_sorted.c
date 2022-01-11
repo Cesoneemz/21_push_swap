@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 22:29:36 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/10 15:51:36 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:02:16 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,12 @@ int	*ft_sort_str(int argc, char **argv)
 	int	index;
 	int	jndex;
 
-	result = (int *)malloc((argc - 1) * sizeof(int));
+	result = (int *)malloc((argc) * sizeof(int));
 	if (!result)
 		return (0);
-	index = 1;
+	index = 0;
 	jndex = 0;
-	while (jndex < (argc - 1))
+	while (jndex < argc)
 		result[jndex++] = ft_atoi(argv[index++]);
 	if (ft_check_sorted(result, jndex))
 	{

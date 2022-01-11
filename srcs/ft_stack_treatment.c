@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:02:13 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/11 15:39:18 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:02:52 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ t_stacks	*ft_init_stack(t_stacks *stacks, int argc, char **argv)
 	if (!stacks->a)
 		return (NULL);
 	stacks->b = NULL;
-	stacks->size = argc - 1;
+	stacks->size = argc;
 	return (stacks);
 }
 

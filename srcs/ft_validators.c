@@ -6,28 +6,28 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:06:25 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/11 15:24:02 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:04:18 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// static t_bool	ft_check_only_spaces(char *str)
-// {
-// 	int	index;
+t_bool	ft_check_only_spaces(char *str)
+{
+	int	index;
 
-// 	index = 0;
-// 	while (str[index] != '\0')
-// 	{
-// 		if (str[index] == '\n' || str[index] == '\t' || str[index] == '\v' \
-// 		|| str[index] == ' ' || str[index] == '\r' || str[index] == '\f' \
-// 		|| ft_isdigit(str[index]))
-// 			index++;
-// 		else
-// 			return (false);
-// 	}
-// 	return (true);
-// }
+	index = 0;
+	while (str[index] != '\0')
+	{
+		if (str[index] == '\n' || str[index] == '\t' || str[index] == '\v' \
+		|| str[index] == ' ' || str[index] == '\r' || str[index] == '\f' \
+		|| ft_isdigit(str[index]))
+			index++;
+		else
+			return (false);
+	}
+	return (true);
+}
 
 static t_bool	ft_check_duplicates(int argc, char **argv)
 {
@@ -35,10 +35,10 @@ static t_bool	ft_check_duplicates(int argc, char **argv)
 	int	j;
 	int	k;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
-		j = 1;
+		j = 0;
 		k = 0;
 		while (argv[j])
 		{
@@ -74,7 +74,7 @@ t_bool	ft_validate_data(int argc, char **argv)
 	int	index;
 	int	jndex;
 
-	index = 1;
+	index = 0;
 	if (argc < 2)
 		return (false);
 	while (argv[index])

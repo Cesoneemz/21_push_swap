@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/23 19:29:02 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:04:14 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_stack			*ft_create_stack(int value);
 
 t_bool			ft_validate_data(int argc, char **argv);
 int				*ft_sort_str(int argc, char **argv);
+t_bool			ft_check_only_spaces(char *str);
 
 /* UTILS */
 
