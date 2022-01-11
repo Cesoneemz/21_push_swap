@@ -24,7 +24,7 @@ INCS		= ./includes/
 INCS_HEADER	= ./includes/push_swap.h
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(INCS) -g
+CFLAGS		= -Wall -Wextra -Werror -I$(INCS) -g -fsanitize=address
 RM			= rm -rf
 
 all:		$(NAME)

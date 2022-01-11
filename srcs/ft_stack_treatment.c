@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:02:13 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 00:30:29 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/11 15:39:18 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@ int	ft_search_order(int value, const int *sorted)
 	int	index;
 
 	index = 0;
-	while (1)
-	{
-		if (sorted[index] == value)
-			return (index + 1);
+	while (sorted[index] != value)
 		index++;
-	}
+	return (index + 1);
 }
 
 void	ft_index_stack(t_stack *a, int *result)
@@ -72,7 +69,7 @@ t_stacks	*ft_create_stacks(int argc, char **argv, int *result)
 	stacks = (t_stacks *)malloc(sizeof(t_stacks));
 	if (!stacks)
 		return (NULL);
-	ft_init_stack(stacks, argc, argv);
+	stacks = ft_init_stack(stacks, argc, argv);
 	index = argc - 2;
 	while (index >= 1)
 	{
