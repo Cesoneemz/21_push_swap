@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:03:45 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/11 16:12:22 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:21:52 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,19 @@ int	ft_countword(char **split_argv)
 	return (index);
 }
 
+void	ft_free_args(char **argv)
+{
+	int	index;
+
+	index = 0;
+	while (argv[index])
+	{
+		free(argv[index]);
+		index++;
+	}
+	free(argv);
+}
+
 int	main(int argc, char **argv)
 {
 	int			*str;
@@ -73,7 +86,7 @@ int	main(int argc, char **argv)
 	else
 		ft_sort_big_stack(ft_countword(split_argv), stacks);
 	free(str);
-	free(split_argv);
+	ft_free_args(split_argv);
 	ft_free_stacks(&stacks);
 	return (0);
 }
