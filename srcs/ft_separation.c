@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:30:34 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 13:11:35 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 13:46:50 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_free_args(int argc, char **argv)
 	int	index;
 
 	index = 0;
-	while (argv[index] && argc == 2)
+	while (argc == 2 && argv[index])
 	{
 		free(argv[index]);
 		index++;

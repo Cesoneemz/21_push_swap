@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:03:45 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 13:10:47 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 14:49:06 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int	main(int argc, char **argv)
 	t_stacks	*stacks;
 	char		**split_argv;
 
-	if (argc < 2)
+	if (argc <= 2)
 		exit(EXIT_FAILURE);
 	split_argv = ft_argv_separate(argc, argv);
 	if (!ft_validate_data(ft_countword(split_argv), split_argv))
 		return (ft_write_error(-1));
 	str = ft_sort_str(ft_countword(split_argv), split_argv);
 	if (!str)
-		return (0);
+		exit(EXIT_FAILURE);
 	stacks = ft_create_stacks(ft_countword(split_argv), split_argv, str);
 	if (!stacks)
 		return (0);

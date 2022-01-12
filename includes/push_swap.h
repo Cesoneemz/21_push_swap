@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 13:11:08 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 14:49:10 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ t_bool			ft_check_only_spaces(char *str);
 
 int				ft_strcmp(char *s1, char *s2);
 long int		ft_long_atoi(const char *str);
+t_bool			ft_is_number(char *num);
 
 /* STACK UTILS */
 

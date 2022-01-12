@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 17:27:48 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/23 19:28:44 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 13:31:39 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,20 @@ long	ft_long_atoi(const char *str)
 		str++;
 	}
 	return (n * res);
+}
+
+t_bool	ft_is_number(char *num)
+{
+	int	index;
+
+	index = 0;
+	if (num[index] == '+' || num[index] == '-')
+		index++;
+	while (num[index])
+	{
+		if (!ft_isdigit(num[index]))
+			return (false);
+		index++;
+	}
+	return (true);
 }
