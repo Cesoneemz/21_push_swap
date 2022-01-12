@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:02:13 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/11 16:02:52 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 12:38:12 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_stacks	*ft_create_stacks(int argc, char **argv, int *result)
 	if (!stacks)
 		return (NULL);
 	stacks = ft_init_stack(stacks, argc, argv);
-	index = argc - 2;
+	index = argc - 1;
 	while (index >= 1)
 	{
 		ft_push_back(stacks->a, ft_atoi(argv[index]));

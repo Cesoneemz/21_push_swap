@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/11 16:04:14 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 13:11:08 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ typedef enum s_bool
 	false = 0,
 	true = 1
 }				t_bool;
+
+/* SEPARATE */
+
+char			**ft_argv_separate(int argc, char **argv);
+int				ft_countword(char **split_argv);
+void			ft_free_args(int argc, char **argv);
 
 /* STACKS INITIALIZATION */
 
