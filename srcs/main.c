@@ -6,12 +6,11 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:03:45 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 14:49:06 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 14:50:31 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 int	ft_write_error(int code)
 {
