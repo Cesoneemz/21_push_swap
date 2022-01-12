@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:06:25 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 13:32:17 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 14:58:30 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_bool	ft_validate_data(int argc, char **argv)
 
 	index = 0;
 	if (argc < 2)
-		return (false);
+		exit(EXIT_FAILURE);
 	while (argv[index])
 	{
 		jndex = 0;

@@ -6,11 +6,12 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 22:29:36 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/11 16:02:16 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:12:27 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 static void	ft_swap_elem(int *result, int index, int jndex)
 {
@@ -68,20 +69,21 @@ int	*ft_sort_str(int argc, char **argv)
 {
 	int	*result;
 	int	index;
-	int	jndex;
 
 	result = (int *)malloc((argc) * sizeof(int));
 	if (!result)
 		return (0);
 	index = 0;
-	jndex = 0;
-	while (jndex < argc)
-		result[jndex++] = ft_atoi(argv[index++]);
-	if (ft_check_sorted(result, jndex))
+	while (index < argc)
+	{
+		result[index] = ft_atoi(argv[index]);
+		index++;
+	}
+	if (ft_check_sorted(result, index))
 	{
 		free(result);
 		return (0);
 	}
-	ft_quick_sort(result, 0, jndex - 1);
+	ft_quick_sort(result, 0, index - 1);
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:38:00 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/11 16:03:11 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:57:54 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_sort_big_stack(int argc, t_stacks *stacks)
 	while (++k < max_bits)
 	{
 		j = 0;
-		while (++j < stack_size)
+		while (j++ < stack_size)
 		{
 			top_order = ft_top_stack(stacks->a)->order;
 			if (((top_order >> k) & 1) == 1)

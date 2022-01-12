@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 14:49:10 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:55:47 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef enum s_bool
 
 char			**ft_argv_separate(int argc, char **argv);
 int				ft_countword(char **split_argv);
-void			ft_free_args(int argc, char **argv);
 
 /* STACKS INITIALIZATION */
 
@@ -94,5 +93,6 @@ void			ft_sort_big_stack(int argc, t_stacks *stacks);
 /* FREE ALL */
 
 void			ft_free_stacks(t_stacks **stacks);
+void			ft_free_args(int argc, char **argv);
 
 #endif

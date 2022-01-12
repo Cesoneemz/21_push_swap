@@ -6,13 +6,14 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:09:01 by wlanette          #+#    #+#             */
-/*   Updated: 2021/10/13 17:19:20 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:47:18 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_get_words_count(const char *str, char del)
 {
@@ -24,7 +25,7 @@ static int	ft_get_words_count(const char *str, char del)
 	while (*str != '\0')
 	{
 		if (((*str == del) && (*(str + 1) != del)) || \
-			(*(str + 1) == '\0' && ft_isalnum(*(str - 1))))
+			(*(str + 1) == '\0' && ft_isalnum(*(str))))
 			index++;
 		str++;
 	}
