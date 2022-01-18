@@ -11,3 +11,5 @@ checker_Mac
 test.sh
 
 push_swap_checker/
+push_swap_visualizder/
+*.py

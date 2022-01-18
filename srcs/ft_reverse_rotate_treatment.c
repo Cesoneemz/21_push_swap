@@ -6,13 +6,13 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:27:04 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/23 12:58:10 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/18 11:29:12 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_rra(t_stack **a)
+void	ft_rra(t_stack **a, t_bool writeable)
 {
 	t_stack	*tmp;
 	t_stack	*head;
@@ -24,10 +24,11 @@ void	ft_rra(t_stack **a)
 	(*a)->next = NULL;
 	tmp->next = *a;
 	(*a) = head;
-	write(1, "rra\n", 4);
+	if (writeable)
+		write(1, "rra\n", 4);
 }
 
-void	ft_rrb(t_stack **b)
+void	ft_rrb(t_stack **b, t_bool writeable)
 {
 	t_stack	*tmp;
 	t_stack	*head;
@@ -39,12 +40,13 @@ void	ft_rrb(t_stack **b)
 	(*b)->next = NULL;
 	tmp->next = *b;
 	(*b) = head;
-	write(1, "rrb\n", 4);
+	if (writeable)
+		write(1, "rrb\n", 4);
 }
 
 void	ft_rrr(t_stack **a, t_stack **b)
 {
-	ft_rra(&(*a));
-	ft_rrb(&(*b));
+	ft_rra(&(*a), false);
+	ft_rrb(&(*b), false);
 	write(1, "rrr\n", 4);
 }

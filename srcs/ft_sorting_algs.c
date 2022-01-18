@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:38:00 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 15:57:54 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/18 11:32:44 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ static void	ft_sort_2_elem(t_stacks *stacks)
 
 	top = ft_top_stack(stacks->a);
 	if (top->order > top->prev->order)
-		ft_sa(&stacks->a);
+		ft_sa(&stacks->a, true);
 }
 
 static void	ft_sort_3_elem(t_stacks *stacks)
 {
 	while (stacks->a->order < stacks->a->next->order)
-		ft_rra(&stacks->a);
+		ft_rra(&stacks->a, true);
 	ft_sort_2_elem(stacks);
 }
 
@@ -40,7 +40,7 @@ static void	ft_sort_4_or_5_elem(t_stacks *stacks)
 	{
 		top = ft_top_stack(stacks->a);
 		if (top->order > median)
-			ft_ra(&stacks->a);
+			ft_ra(&stacks->a, true);
 		else
 		{
 			ft_pb(&stacks->a, &stacks->b);
@@ -83,7 +83,7 @@ void	ft_sort_big_stack(int argc, t_stacks *stacks)
 		{
 			top_order = ft_top_stack(stacks->a)->order;
 			if (((top_order >> k) & 1) == 1)
-				ft_ra(&stacks->a);
+				ft_ra(&stacks->a, true);
 			else
 				ft_pb(&stacks->a, &stacks->b);
 		}

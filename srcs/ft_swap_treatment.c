@@ -6,13 +6,13 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:43:56 by wlanette          #+#    #+#             */
-/*   Updated: 2021/12/22 00:03:32 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/18 11:30:48 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_sa(t_stack **stack)
+void	ft_sa(t_stack **stack, t_bool writeable)
 {
 	t_stack	*top;
 	int		tmp_data;
@@ -29,11 +29,12 @@ void	ft_sa(t_stack **stack)
 		top->prev->order = top->order;
 		top->data = tmp_data;
 		top->order = tmp_order;
-		write(1, "sa\n", 3);
+		if (writeable)
+			write(1, "sa\n", 3);
 	}
 }
 
-void	ft_sb(t_stack **stack)
+void	ft_sb(t_stack **stack, t_bool writeable)
 {
 	t_stack	*top;
 	int		tmp_data;
@@ -50,13 +51,14 @@ void	ft_sb(t_stack **stack)
 		top->prev->order = top->order;
 		top->data = tmp_data;
 		top->order = tmp_order;
-		write(1, "sb\n", 3);
+		if (writeable)
+			write(1, "sb\n", 3);
 	}
 }
 
 void	ft_ss(t_stack **a, t_stack **b)
 {
-	ft_sa(&(*a));
-	ft_sb(&(*b));
+	ft_sa(&(*a), false);
+	ft_sb(&(*b), false);
 	write(1, "ss\n", 3);
 }

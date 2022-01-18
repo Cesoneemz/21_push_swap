@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 15:55:47 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/18 13:44:08 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,26 @@ void			ft_push_back(t_stack *stack, int data);
 
 /* OPERATIONS */
 
-void			ft_sa(t_stack **stack);
-void			ft_sb(t_stack **stack);
+void			ft_sa(t_stack **stack, t_bool writeable);
+void			ft_sb(t_stack **stack, t_bool writeable);
 void			ft_ss(t_stack **a, t_stack **b);
 
 void			ft_pa(t_stack **a, t_stack **b);
 void			ft_pb(t_stack **a, t_stack **b);
 
-void			ft_ra(t_stack **a);
-void			ft_rb(t_stack **b);
+void			ft_ra(t_stack **a, t_bool writeable);
+void			ft_rb(t_stack **b, t_bool writeable);
 void			ft_rr(t_stack **a, t_stack **b);
 
-void			ft_rra(t_stack **a);
-void			ft_rra(t_stack **b);
+void			ft_rra(t_stack **a, t_bool writeable);
+void			ft_rrb(t_stack **b, t_bool writeable);
 void			ft_rrr(t_stack **a, t_stack **b);
 
 /* SORTING ALGORITHMS */
 
 void			ft_sort_small_stack(t_stacks *stacks);
 void			ft_sort_big_stack(int argc, t_stacks *stacks);
+void			ft_insertion_sort(t_stacks *stacks);
 
 /* FREE ALL */
 
