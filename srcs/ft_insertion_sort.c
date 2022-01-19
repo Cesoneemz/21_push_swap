@@ -6,14 +6,14 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:18:03 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/18 14:13:37 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/20 02:04:49 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <stdio.h>
 
-static int	ft_get_min_elem_in_stack(t_stack *stack)
+int	ft_get_min_elem_in_stack(t_stack *stack)
 {
 	t_stack	*tmp;
 	int		min;
@@ -29,49 +29,37 @@ static int	ft_get_min_elem_in_stack(t_stack *stack)
 	return (min);
 }
 
-/* static int	ft_get_max_elem_in_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-	int		max;
-
-	tmp = stack;
-	max = INT_MIN;
-	while (tmp)
-	{
-		if (tmp->data > max)
-			max = tmp->data;
-		tmp = tmp->next;
-	}
-	return (max);
-} */
-
-void	ft_insertion_sort(t_stacks *stacks)
+static void	ft_push_all_to_b(t_stacks *stacks)
 {
 	int		min;
 	t_stack	*top;
 	t_stack	*tmp;
-	t_bool	flag;
 
 	top = ft_top_stack(stacks->a);
-	flag = true;
 	tmp = stacks->a;
 	while (tmp)
 	{
 		min = ft_get_min_elem_in_stack(tmp);
-		while (top->data != min)
-		{
-			ft_ra(&stacks->a, true);
-			top = ft_top_stack(stacks->a);
-		}
+		ft_put_number_on_top(stacks, min);
 		ft_pb(&stacks->a, &stacks->b);
-		tmp = stacks->a->next;
-		if (!tmp)
-			printf("NULL\n");
+		tmp = stacks->a;
 	}
-	while (stacks->b)
-	{
-		printf("%d\n", stacks->b->data);
-		stacks->b = stacks->b->next;
-	}
-	exit(EXIT_SUCCESS);
+}
+
+static void	ft_push_all_to_a(t_stacks *stacks)
+{
+	int	size;
+
+	size = stacks->size;
+	while (size--)
+		ft_pa(&stacks->a, &stacks->b);
+}
+
+void	ft_insertion_sort(t_stacks *stacks)
+{
+	size_t	chunks;
+
+	chunks = stacks->size / 10;
+	ft_push_all_to_b(stacks);
+//	ft_push_all_to_a(stacks);
 }

@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/18 13:44:08 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/20 02:05:02 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,13 @@ void			ft_rrr(t_stack **a, t_stack **b);
 void			ft_sort_small_stack(t_stacks *stacks);
 void			ft_sort_big_stack(int argc, t_stacks *stacks);
 void			ft_insertion_sort(t_stacks *stacks);
+
+/* CHUNK UTILS */
+
+size_t			ft_get_chunks(t_stacks *stacks);
+void			ft_put_number_on_top(t_stacks *stacks, int n);
+int				ft_get_min_elem_in_stack(t_stack *stack);
+//static int		ft_get_max_elem_in_stack(t_stack *stack);
 
 /* FREE ALL */
 

@@ -2,6 +2,7 @@
 *.DS_STORE
 *.idea
 *.vscode
+*.ccls-cache
 
 *.o
 *.a
@@ -11,5 +12,5 @@ checker_Mac
 test.sh
 
 push_swap_checker/
-push_swap_visualizder/
+push_swap_visualizer/
 *.py

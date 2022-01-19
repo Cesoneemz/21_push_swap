@@ -6,7 +6,7 @@
 #    By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 14:59:03 by wlanette          #+#    #+#              #
-#    Updated: 2022/01/18 12:41:09 by wlanette         ###   ########.fr        #
+#    Updated: 2022/01/19 22:22:22 by wlanette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS		= ./srcs/main.c ./srcs/ft_utils.c ./srcs/ft_validators.c \
 			  ./srcs/ft_stack_treatment.c ./srcs/ft_stack_utils.c \
 			  ./srcs/ft_swap_treatment.c ./srcs/ft_rotate_treatment.c \
 			  ./srcs/ft_reverse_rotate_treatment.c ./srcs/ft_sorting_algs.c \
-			  ./srcs/ft_separation.c ./srcs/ft_insertion_sort.c
+			  ./srcs/ft_separation.c ./srcs/ft_insertion_sort.c ./srcs/ft_chunks_utils.c
 OBJS		= $(SRCS:.c=.o)
 
 LIBFT		= ./libft/libft.a
