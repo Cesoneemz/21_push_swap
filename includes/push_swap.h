@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/20 02:05:02 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/24 18:16:18 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,20 @@
 # include <limits.h>
 # include "../libft/libft.h"
 
+typedef struct s_score
+{
+	int	count_a;
+	int	count_b;
+	int	dest_a;
+	int	dest_b;
+}				t_score;
+
 typedef struct s_stack
 {
 	int				data;
 	int				order;
+	int				score;
+	int				rotate;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }				t_stack;
@@ -30,6 +40,9 @@ typedef struct s_stacks
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		min;
+	int		max;
+	int		median;
 	int		size;
 }				t_stacks;
 
@@ -67,6 +80,9 @@ int				ft_get_stack_size(t_stack *stack);
 t_stack			*ft_top_stack(t_stack *stack);
 void			ft_pop_back(t_stack **stack);
 void			ft_push_back(t_stack *stack, int data);
+void			ft_count_score_to_elem(t_stack *stack, int size);
+int				ft_finding_place(t_stacks *stacks, t_stack *b, t_score *score, int min);
+int				ft_count_to_min(t_stack *a, int min);
 
 /* OPERATIONS */
 
@@ -95,7 +111,7 @@ void			ft_insertion_sort(t_stacks *stacks);
 
 size_t			ft_get_chunks(t_stacks *stacks);
 void			ft_put_number_on_top(t_stacks *stacks, int n);
-int				ft_get_min_elem_in_stack(t_stack *stack);
+void			ft_get_mmm(t_stacks *stacks);
 //static int		ft_get_max_elem_in_stack(t_stack *stack);
 
 /* FREE ALL */

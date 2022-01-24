@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:46:18 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/11 13:56:32 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:52:26 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_get_stack_size(t_stack *stack)
 
 	tmp = stack;
 	size = 1;
+	if (!stack)
+		return (0);
 	while (tmp->next)
 	{
 		size++;
@@ -60,6 +62,8 @@ void	ft_push_back(t_stack *stack, int data)
 	node->prev = stack;
 	node->next = NULL;
 	node->order = -1;
+	node->score = 0;
+	node->rotate = 0;
 	node->data = data;
 }
 

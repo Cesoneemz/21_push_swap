@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:02:13 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 14:12:24 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/24 15:05:48 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ t_stack	*ft_create_stack(int value)
 	node->prev = NULL;
 	node->data = value;
 	node->order = 0;
+	node->score = 0;
+	node->rotate = 0;
 	return (node);
 }
 
@@ -58,6 +60,9 @@ t_stacks	*ft_init_stack(t_stacks *stacks, int argc, char **argv)
 		return (NULL);
 	stacks->b = NULL;
 	stacks->size = argc;
+	stacks->min = 0;
+	stacks->max = 0;
+	stacks->median = 0;
 	return (stacks);
 }
 
