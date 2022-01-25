@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:21:49 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/18 11:29:57 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:19:25 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_ra(t_stack **a, t_bool writeable)
 	int		stack_size;
 
 	stack_size = ft_get_stack_size(*a);
-	if (stack_size > 2)
+	if (stack_size > 1)
 	{
 		tmp = ft_top_stack(*a);
 		tmp->prev->next = NULL;
@@ -37,7 +37,7 @@ void	ft_rb(t_stack **b, t_bool writeable)
 	int		stack_size;
 
 	stack_size = ft_get_stack_size(*b);
-	if (stack_size > 2)
+	if (stack_size > 1)
 	{
 		tmp = ft_top_stack(*b);
 		tmp->prev->next = NULL;

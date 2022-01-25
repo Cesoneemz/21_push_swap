@@ -6,6 +6,7 @@
 
 *.o
 *.a
+*.txt
 push_swap
 
 checker_Mac

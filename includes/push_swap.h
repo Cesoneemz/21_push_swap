@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/24 18:16:18 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:51:36 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,10 @@ t_stack			*ft_top_stack(t_stack *stack);
 void			ft_pop_back(t_stack **stack);
 void			ft_push_back(t_stack *stack, int data);
 void			ft_count_score_to_elem(t_stack *stack, int size);
-int				ft_finding_place(t_stacks *stacks, t_stack *b, t_score *score, int min);
+int				ft_finding_place(t_stack *a, t_stack *b, \
+				t_score *score, int min);
 int				ft_count_to_min(t_stack *a, int min);
+void			ft_get_mmm(t_stacks *stacks);
 
 /* OPERATIONS */
 
@@ -106,13 +108,6 @@ void			ft_rrr(t_stack **a, t_stack **b);
 void			ft_sort_small_stack(t_stacks *stacks);
 void			ft_sort_big_stack(int argc, t_stacks *stacks);
 void			ft_insertion_sort(t_stacks *stacks);
-
-/* CHUNK UTILS */
-
-size_t			ft_get_chunks(t_stacks *stacks);
-void			ft_put_number_on_top(t_stacks *stacks, int n);
-void			ft_get_mmm(t_stacks *stacks);
-//static int		ft_get_max_elem_in_stack(t_stack *stack);
 
 /* FREE ALL */
 

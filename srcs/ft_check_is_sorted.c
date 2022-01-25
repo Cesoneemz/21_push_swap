@@ -6,12 +6,11 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 22:29:36 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 15:12:27 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:48:48 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 static void	ft_swap_elem(int *result, int index, int jndex)
 {

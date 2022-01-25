@@ -6,12 +6,11 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:03:45 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/24 16:42:38 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:21:09 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 int	ft_write_error(int code)
 {
@@ -24,6 +23,16 @@ static void	ft_free_all(int argc, char **sa, t_stacks *stacks, int *str)
 	free(str);
 	ft_free_args(argc, sa);
 	ft_free_stacks(&stacks);
+}
+
+static void	ft_sort_delegate(t_stacks *stacks, char **split_argv)
+{
+	if (stacks->size <= 5)
+		ft_sort_small_stack(stacks);
+	else if (stacks->size <= 100)
+		ft_insertion_sort(stacks);
+	else
+		ft_sort_big_stack(ft_countword(split_argv), stacks);
 }
 
 int	main(int argc, char **argv)
@@ -46,11 +55,7 @@ int	main(int argc, char **argv)
 	stacks = ft_create_stacks(ft_countword(split_argv), split_argv, str);
 	if (!stacks)
 		return (0);
-	ft_insertion_sort(stacks);
-/* 	if (stacks->size <= 5)
-		ft_sort_small_stack(stacks);
-	else
-		ft_sort_big_stack(ft_countword(split_argv), stacks); */
+	ft_sort_delegate(stacks, split_argv);
 	ft_free_all(argc, split_argv, stacks, str);
 	return (0);
 }
