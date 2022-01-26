@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:18:03 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/25 16:40:26 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/26 15:24:57 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	ft_get_min_ins_score(t_stacks *stacks, t_score *score)
 
 static void	ft_execute(t_stacks *stacks, t_score *score)
 {
-	while (score->count_a)
+	while (score->count_a > 0)
 	{
 		if (score->dest_a == 1)
 			ft_ra(&stacks->a, true);
@@ -58,7 +58,7 @@ static void	ft_execute(t_stacks *stacks, t_score *score)
 			ft_rra(&stacks->a, true);
 		score->count_a--;
 	}
-	while (score->count_b)
+	while (score->count_b > 0)
 	{
 		if (score->dest_b == 1)
 			ft_rb(&stacks->b, true);

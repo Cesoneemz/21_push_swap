@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/25 16:51:36 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/26 15:25:05 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int				ft_finding_place(t_stack *a, t_stack *b, \
 				t_score *score, int min);
 int				ft_count_to_min(t_stack *a, int min);
 void			ft_get_mmm(t_stacks *stacks);
+int				ft_get_max_elem_in_stack(t_stack *stack);
 
 /* OPERATIONS */
 

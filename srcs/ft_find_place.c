@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 15:07:19 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/25 16:41:04 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/26 15:24:46 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static t_bool	ft_smaller_elem_detect(t_stack *a, int buf, int src)
 {
 	t_stack	*tmp;
 
-	tmp = ft_top_stack(a);
+	tmp = a;
 	while (tmp)
 	{
 		if (tmp->data < buf && tmp->data > src)
@@ -26,7 +26,7 @@ static t_bool	ft_smaller_elem_detect(t_stack *a, int buf, int src)
 	return (false);
 }
 
-void	ft_help_finding_place(t_stack *a, t_stack *b, int *action, int *buf)
+static void	ft_help_finding_place(t_stack *a, t_stack *b, int *action, int *buf)
 {
 	while (a)
 	{
@@ -63,7 +63,7 @@ int	ft_finding_place(t_stack *a, t_stack *b, t_score *score, int min)
 	buf = 0;
 	ft_help_finding_place(a, b, &action, &buf);
 	if (a->rotate == -1)
-		action = ft_get_stack_size(a) - action;
+		action -= ft_get_stack_size(a);
 	if (min == -1 || (action + b->score) < min)
 	{
 		score->dest_a = a->rotate;

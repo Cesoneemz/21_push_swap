@@ -6,13 +6,13 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 13:14:19 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/24 15:58:32 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/26 13:28:23 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	ft_get_max_elem_in_stack(t_stack *stack)
+int	ft_get_max_elem_in_stack(t_stack *stack)
 {
 	t_stack	*tmp;
 	int		max;
