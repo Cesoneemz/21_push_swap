@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:12:18 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 18:07:38 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:14:20 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,16 @@ void	ft_sort_by_action(t_stacks *stacks)
 	while (line)
 	{
 		tmp = line;
-		free(line);
-		line = ft_strtrim(tmp, "\n");
+		line = ft_strtrim(line, "\n");
+		free(tmp);
 		ft_check_command(line, stacks);
 		line = get_next_line(0);
 	}
-	free(line);
+	if (line)
+	{
+		free(line);
+		line = NULL;
+	}
 }
 
 t_bool	ft_check_stacks_sorted(t_stacks *stacks)

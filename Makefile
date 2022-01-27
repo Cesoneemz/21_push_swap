@@ -6,7 +6,7 @@
 #    By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 14:59:03 by wlanette          #+#    #+#              #
-#    Updated: 2022/01/27 18:08:14 by wlanette         ###   ########.fr        #
+#    Updated: 2022/01/27 18:14:57 by wlanette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ INCS_HEADER	= ./includes/push_swap.h
 
 
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra -I$(INCS) -fsanitize=address
+CFLAGS		= -Wall -Werror -Wextra -I$(INCS)
 RM			= rm -rf
 
 all:		$(NAME) bonus
