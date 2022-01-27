@@ -6,11 +6,12 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:30:34 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/25 16:48:43 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 15:43:31 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 char	**ft_argv_separate(int argc, char **argv)
 {
@@ -18,7 +19,7 @@ char	**ft_argv_separate(int argc, char **argv)
 	char	**result;
 
 	index = 1;
-	if (argc == 2 && ft_check_only_spaces(argv[index]))
+	if (argc == 2)
 	{
 		result = ft_split(argv[1], ' ');
 		return (result);

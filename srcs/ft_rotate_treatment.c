@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:21:49 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/25 16:19:25 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 13:22:18 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,10 @@ void	ft_rb(t_stack **b, t_bool writeable)
 	}
 }
 
-void	ft_rr(t_stack **a, t_stack **b)
+void	ft_rr(t_stack **a, t_stack **b, t_bool writeable)
 {
 	ft_ra(&(*a), false);
 	ft_rb(&(*b), false);
-	write(1, "rr\n", 3);
+	if (writeable)
+		write(1, "rr\n", 3);
 }

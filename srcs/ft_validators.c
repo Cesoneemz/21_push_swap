@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:06:25 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 14:58:30 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 15:52:40 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_bool	ft_check_only_spaces(char *str)
 	{
 		if (str[index] == '\n' || str[index] == '\t' || str[index] == '\v' \
 		|| str[index] == ' ' || str[index] == '\r' || str[index] == '\f' \
-		|| ft_isdigit(str[index]))
+		|| ft_isdigit(str[index]) || str[index] == '-')
 			index++;
 		else
 			return (false);
@@ -42,7 +42,7 @@ static t_bool	ft_check_duplicates(int argc, char **argv)
 		k = 0;
 		while (argv[j])
 		{
-			if (!ft_strcmp(argv[i], argv[j]))
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 				k++;
 			j++;
 		}
@@ -82,7 +82,7 @@ t_bool	ft_validate_data(int argc, char **argv)
 		jndex = 0;
 		while (argv[index][jndex])
 		{
-			if (!ft_is_number(argv[index]))
+			if (!ft_is_number(argv[index]) || !ft_check_only_spaces(argv[index]))
 				return (false);
 			jndex++;
 		}

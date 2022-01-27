@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 12:44:23 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:21:04 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "../libft/libft.h"
+# include "./libft/libft.h"
+# include "./gnl/get_next_line.h"
 
 typedef struct s_score
 {
@@ -75,6 +76,7 @@ t_bool			ft_check_only_spaces(char *str);
 int				ft_strcmp(char *s1, char *s2);
 long int		ft_long_atoi(const char *str);
 t_bool			ft_is_number(char *num);
+int				ft_write_error();
 
 /* STACK UTILS */
 
@@ -93,18 +95,18 @@ int				ft_get_max_elem_in_stack(t_stack *stack);
 
 void			ft_sa(t_stack **stack, t_bool writeable);
 void			ft_sb(t_stack **stack, t_bool writeable);
-void			ft_ss(t_stack **a, t_stack **b);
+void			ft_ss(t_stack **a, t_stack **b, t_bool writeable);
 
-void			ft_pa(t_stack **a, t_stack **b, t_stacks *stacks);
-void			ft_pb(t_stack **a, t_stack **b, t_stacks *stacks);
+void			ft_pa(t_stack **a, t_stack **b, t_stacks *stacks, t_bool writeable);
+void			ft_pb(t_stack **a, t_stack **b, t_stacks *stacks, t_bool writeable);
 
 void			ft_ra(t_stack **a, t_bool writeable);
 void			ft_rb(t_stack **b, t_bool writeable);
-void			ft_rr(t_stack **a, t_stack **b);
+void			ft_rr(t_stack **a, t_stack **b, t_bool writeable);
 
 void			ft_rra(t_stack **a, t_bool writeable);
 void			ft_rrb(t_stack **b, t_bool writeable);
-void			ft_rrr(t_stack **a, t_stack **b);
+void			ft_rrr(t_stack **a, t_stack **b, t_bool writeable);
 
 /* SORTING ALGORITHMS */
 

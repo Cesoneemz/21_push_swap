@@ -6,45 +6,56 @@
 #    By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 14:59:03 by wlanette          #+#    #+#              #
-#    Updated: 2022/01/27 12:46:28 by wlanette         ###   ########.fr        #
+#    Updated: 2022/01/27 16:21:25 by wlanette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
+NAME_B		= checker
 SRCS		= ./srcs/main.c ./srcs/ft_utils.c ./srcs/ft_validators.c \
 			  ./srcs/ft_check_is_sorted.c ./srcs/ft_push_treatment.c \
 			  ./srcs/ft_stack_treatment.c ./srcs/ft_stack_utils.c \
 			  ./srcs/ft_swap_treatment.c ./srcs/ft_rotate_treatment.c \
 			  ./srcs/ft_reverse_rotate_treatment.c ./srcs/ft_sorting_algs.c \
-			  ./srcs/ft_separation.c ./srcs/ft_insertion_sort.c ./srcs/ft_find_place.c\
+			  ./srcs/ft_separation.c ./srcs/ft_insertion_sort.c ./srcs/ft_find_place.c \
 			  ./srcs/ft_getters.c ./srcs/ft_score_treatment.c
 OBJS		= $(SRCS:.c=.o)
 
-LIBFT		= ./libft/libft.a
+SRCS_B		= ./srcs/ft_checker.c ./srcs/ft_utils.c ./srcs/ft_validators.c \
+			  ./srcs/ft_check_is_sorted.c ./srcs/ft_stack_treatment.c ./srcs/ft_stack_utils.c \
+			  ./srcs/ft_separation.c ./includes/gnl/get_next_line.c ./includes/gnl/get_next_line_utils.c \
+			  ./srcs/ft_push_treatment.c ./srcs/ft_swap_treatment.c ./srcs/ft_rotate_treatment.c \
+			  ./srcs/ft_reverse_rotate_treatment.c
+OBJS_B		= $(SRCS_B:.c=.o)
+
+LIBFT		= ./includes/libft/libft.a
 
 INCS		= ./includes/
 INCS_HEADER	= ./includes/push_swap.h
 
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra -I$(INCS) -g
+CFLAGS		= -Wall -Werror -Wextra -I$(INCS)
 RM			= rm -rf
 
-all:		$(NAME)
+all:		$(NAME) bonus
 
 $(NAME):	$(OBJS) $(INCS_HEADER) $(LIBFT)
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
-			make bonus -C ./libft/
+			make bonus -C ./includes/libft/
 
 clean:		
-			make clean -C ./libft/
-			$(RM) $(OBJS)
+			make clean -C ./includes/libft/
+			$(RM) $(OBJS) $(OBJS_B)
 
 fclean:		clean
-			make fclean -C ./libft/
-			$(RM) $(NAME)
+			make fclean -C ./includes/libft/
+			$(RM) $(NAME) $(NAME_B)
 
 re:			fclean all 
 
-.PHONY:		all clean fclean re
+bonus:		$(OBJS_B) $(INCS_HEADER) $(LIBFT)
+			$(CC) $(CFLAGS) $(OBJS_B) $(LIBFT) -o $(NAME_B)
+
+.PHONY:		all clean fclean re bonus

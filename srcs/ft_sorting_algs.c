@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:38:00 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 12:44:06 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:19:16 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,18 @@ static void	ft_sort_3_elem(t_stacks *stacks)
 static void	ft_sort_4_or_5_elem(t_stacks *stacks)
 {
 	ft_get_mmm(stacks);
-	while (ft_get_stack_size(stacks->b) < 2)
+	while (stacks->size_b < 2)
 	{
 		if (ft_top_stack(stacks->a)->data == stacks->min \
 		|| ft_top_stack(stacks->a)->data == stacks->max)
-			ft_pb(&stacks->a, &stacks->b, stacks);
+			ft_pb(&stacks->a, &stacks->b, stacks, true);
 		else
 			ft_ra(&stacks->a, true);
 	}
 	ft_sort_3_elem(stacks);
-	ft_pa(&stacks->a, &stacks->b, stacks);
-	ft_pa(&stacks->a, &stacks->b, stacks);
-	if (stacks->a->data == stacks->max)
+	ft_pa(&stacks->a, &stacks->b, stacks, true);
+	ft_pa(&stacks->a, &stacks->b, stacks, true);
+	if (ft_top_stack(stacks->a)->data == stacks->max)
 		ft_ra(&stacks->a, true);
 	else
 	{

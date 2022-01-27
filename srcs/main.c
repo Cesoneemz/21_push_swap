@@ -6,17 +6,12 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:03:45 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 12:42:36 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:25:30 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-static int	ft_write_error(int code)
-{
-	write(1, "Error\n", 6);
-	return (code);
-}
+#include <stdio.h>
 
 static void	ft_free_all(int argc, char **sa, t_stacks *stacks, int *str)
 {	
@@ -29,8 +24,6 @@ static void	ft_sort_delegate(t_stacks *stacks)
 {
 	if (stacks->size <= 5)
 		ft_sort_small_stack(stacks);
-	else if (stacks->size <= 100)
-		ft_insertion_sort(stacks);
 	else
 		ft_insertion_sort(stacks);
 }
@@ -45,7 +38,7 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	split_argv = ft_argv_separate(argc, argv);
 	if (!ft_validate_data(ft_countword(split_argv), split_argv))
-		return (ft_write_error(-1));
+		ft_write_error();
 	str = ft_sort_str(ft_countword(split_argv), split_argv);
 	if (!str)
 	{

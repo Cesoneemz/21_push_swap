@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 17:27:48 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/12 13:31:39 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 15:29:22 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,10 @@ t_bool	ft_is_number(char *num)
 		index++;
 	}
 	return (true);
+}
+
+int	ft_write_error(void)
+{
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }

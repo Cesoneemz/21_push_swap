@@ -6,11 +6,12 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:18:03 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 12:36:49 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 15:59:14 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 static void	ft_push_all_to_b(t_stacks *stacks)
 {
@@ -19,7 +20,7 @@ static void	ft_push_all_to_b(t_stacks *stacks)
 		if (ft_top_stack(stacks->a)->data != stacks->min \
 		&& ft_top_stack(stacks->a)->data != stacks->max)
 		{
-			ft_pb(&stacks->a, &stacks->b, stacks);
+			ft_pb(&stacks->a, &stacks->b, stacks, true);
 			if (ft_top_stack(stacks->b)->data > stacks->median)
 				ft_rb(&stacks->b, true);
 		}
@@ -28,7 +29,7 @@ static void	ft_push_all_to_b(t_stacks *stacks)
 	}
 	if (ft_top_stack(stacks->a)->data < ft_top_stack(stacks->a)->prev->data)
 		ft_sa(&stacks->a, true);
-	ft_pa(&stacks->a, &stacks->b, stacks);
+	ft_pa(&stacks->a, &stacks->b, stacks, true);
 }
 
 static void	ft_get_min_ins_score(t_stacks *stacks, t_score *score)
@@ -68,7 +69,7 @@ static void	ft_execute(t_stacks *stacks, t_score *score)
 			ft_rrb(&stacks->b, true);
 		score->count_b--;
 	}
-	ft_pa(&stacks->a, &stacks->b, stacks);
+	ft_pa(&stacks->a, &stacks->b, stacks, true);
 }
 
 static void	ft_push_all_to_a(t_stacks *stacks)

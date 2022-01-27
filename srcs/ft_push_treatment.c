@@ -6,13 +6,13 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 00:04:30 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 12:39:32 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 13:22:41 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_pa(t_stack **a, t_stack **b, t_stacks *stacks)
+void	ft_pa(t_stack **a, t_stack **b, t_stacks *stacks, t_bool writeable)
 {
 	t_stack	*top_stack_a;
 	t_stack	*top_stack_b;
@@ -30,11 +30,12 @@ void	ft_pa(t_stack **a, t_stack **b, t_stacks *stacks)
 		else
 			*a = ft_create_stack(tmp_data);
 		top_stack_a = ft_top_stack(*a);
-		write(1, "pa\n", 3);
+		if (writeable)
+			write(1, "pa\n", 3);
 	}
 }
 
-void	ft_pb(t_stack **a, t_stack **b, t_stacks *stacks)
+void	ft_pb(t_stack **a, t_stack **b, t_stacks *stacks, t_bool writeable)
 {
 	t_stack	*top_stack_a;
 	t_stack	*top_stack_b;
@@ -52,6 +53,7 @@ void	ft_pb(t_stack **a, t_stack **b, t_stacks *stacks)
 		else
 			*b = ft_create_stack(tmp_data);
 		top_stack_b = ft_top_stack(*b);
-		write(1, "pb\n", 3);
+		if (writeable)
+			write(1, "pb\n", 3);
 	}
 }
