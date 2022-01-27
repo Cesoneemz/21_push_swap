@@ -6,7 +6,7 @@
 #    By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 14:59:03 by wlanette          #+#    #+#              #
-#    Updated: 2022/01/27 16:21:25 by wlanette         ###   ########.fr        #
+#    Updated: 2022/01/27 18:08:14 by wlanette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,9 @@ LIBFT		= ./includes/libft/libft.a
 INCS		= ./includes/
 INCS_HEADER	= ./includes/push_swap.h
 
+
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra -I$(INCS)
+CFLAGS		= -Wall -Werror -Wextra -I$(INCS) -fsanitize=address
 RM			= rm -rf
 
 all:		$(NAME) bonus
@@ -55,7 +56,9 @@ fclean:		clean
 
 re:			fclean all 
 
-bonus:		$(OBJS_B) $(INCS_HEADER) $(LIBFT)
+bonus:		$(NAME_B)
+
+$(NAME_B):	$(OBJS_B) $(INCS_HEADER) $(LIBFT)
 			$(CC) $(CFLAGS) $(OBJS_B) $(LIBFT) -o $(NAME_B)
 
 .PHONY:		all clean fclean re bonus

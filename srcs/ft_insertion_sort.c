@@ -6,12 +6,11 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:18:03 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 15:59:14 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:08:02 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 static void	ft_push_all_to_b(t_stacks *stacks)
 {
