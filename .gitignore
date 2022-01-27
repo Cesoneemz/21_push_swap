@@ -9,7 +9,6 @@
 *.txt
 push_swap
 
-ft_checker.c
 
 checker_Mac
 test.sh
