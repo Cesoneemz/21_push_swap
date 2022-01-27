@@ -6,7 +6,7 @@
 #    By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 14:59:03 by wlanette          #+#    #+#              #
-#    Updated: 2022/01/25 16:52:31 by wlanette         ###   ########.fr        #
+#    Updated: 2022/01/27 12:46:28 by wlanette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ RM			= rm -rf
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(INCS_HEADER) $(LIBFT) Makefile
+$(NAME):	$(OBJS) $(INCS_HEADER) $(LIBFT)
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):

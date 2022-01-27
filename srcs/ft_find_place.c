@@ -6,54 +6,57 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 15:07:19 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/26 15:24:46 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:35:07 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 static t_bool	ft_smaller_elem_detect(t_stack *a, int buf, int src)
 {
 	t_stack	*tmp;
+	t_bool	ret;
 
-	tmp = a;
-	while (tmp)
+	tmp = ft_top_stack(a);
+	ret = false;
+	while (tmp && !ret)
 	{
 		if (tmp->data < buf && tmp->data > src)
-			return (true);
+			ret = true;
 		tmp = tmp->prev;
 	}
-	return (false);
+	return (ret);
 }
 
-static void	ft_help_finding_place(t_stack *a, t_stack *b, int *action, int *buf)
+static void	ft_help_finding_place(t_stacks *s, int data, int *action, int *buf)
 {
-	while (a)
+	while (s->a)
 	{
-		*buf = a->data;
-		if (b->data > a->data)
+		*buf = s->a->data;
+		if (data > s->a->data)
 		{
 			*action += 1;
-			if (a->prev->data > b->data)
+			if (s->a->prev->data > data)
 				break ;
-			a = a->prev;
+			s->a = s->a->prev;
 		}
 		else
 			break ;
 	}
-	if (ft_smaller_elem_detect(a, *buf, b->data))
+	if (ft_smaller_elem_detect(s->a, *buf, data))
 	{
-		while (a)
+		while (s->a)
 		{
-			if (a->data < *buf && a->data > b->data)
+			if (s->a->data < *buf && s->a->data > data)
 				break ;
 			*action += 1;
-			a = a->prev;
+			s->a = s->a->prev;
 		}
 	}
 }
 
-int	ft_finding_place(t_stack *a, t_stack *b, t_score *score, int min)
+int	ft_finding_place(t_stacks *stacks, t_stack *b, t_score *score, int min)
 {
 	int	action;
 	int	buf;
@@ -61,12 +64,12 @@ int	ft_finding_place(t_stack *a, t_stack *b, t_score *score, int min)
 
 	action = 0;
 	buf = 0;
-	ft_help_finding_place(a, b, &action, &buf);
-	if (a->rotate == -1)
-		action -= ft_get_stack_size(a);
+	ft_help_finding_place(stacks, b->data, &action, &buf);
+	if (stacks->a->rotate == -1)
+		action = stacks->size_a - action;
 	if (min == -1 || (action + b->score) < min)
 	{
-		score->dest_a = a->rotate;
+		score->dest_a = stacks->a->rotate;
 		score->dest_b = b->rotate;
 		score->count_a = action;
 		score->count_b = b->score;

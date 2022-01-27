@@ -6,33 +6,11 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:02:13 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/24 15:05:48 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:39:59 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	ft_search_order(int value, const int *sorted)
-{
-	int	index;
-
-	index = 0;
-	while (sorted[index] != value)
-		index++;
-	return (index + 1);
-}
-
-void	ft_index_stack(t_stack *a, int *result)
-{
-	t_stack	*tmp;
-
-	tmp = a;
-	while (tmp)
-	{
-		tmp->order = ft_search_order(tmp->data, result);
-		tmp = tmp->next;
-	}
-}
 
 t_stack	*ft_create_stack(int value)
 {
@@ -44,7 +22,6 @@ t_stack	*ft_create_stack(int value)
 	node->next = NULL;
 	node->prev = NULL;
 	node->data = value;
-	node->order = 0;
 	node->score = 0;
 	node->rotate = 0;
 	return (node);
@@ -63,10 +40,12 @@ t_stacks	*ft_init_stack(t_stacks *stacks, int argc, char **argv)
 	stacks->min = 0;
 	stacks->max = 0;
 	stacks->median = 0;
+	stacks->size_a = 0;
+	stacks->size_b = 0;
 	return (stacks);
 }
 
-t_stacks	*ft_create_stacks(int argc, char **argv, int *result)
+t_stacks	*ft_create_stacks(int argc, char **argv)
 {
 	t_stacks	*stacks;
 	int			index;
@@ -81,6 +60,5 @@ t_stacks	*ft_create_stacks(int argc, char **argv, int *result)
 		ft_push_back(stacks->a, ft_atoi(argv[index]));
 		index--;
 	}
-	ft_index_stack(stacks->a, result);
 	return (stacks);
 }

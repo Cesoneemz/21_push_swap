@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 12:18:03 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/26 15:24:57 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:36:49 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_push_all_to_b(t_stacks *stacks)
 		if (ft_top_stack(stacks->a)->data != stacks->min \
 		&& ft_top_stack(stacks->a)->data != stacks->max)
 		{
-			ft_pb(&stacks->a, &stacks->b);
+			ft_pb(&stacks->a, &stacks->b, stacks);
 			if (ft_top_stack(stacks->b)->data > stacks->median)
 				ft_rb(&stacks->b, true);
 		}
@@ -28,7 +28,7 @@ static void	ft_push_all_to_b(t_stacks *stacks)
 	}
 	if (ft_top_stack(stacks->a)->data < ft_top_stack(stacks->a)->prev->data)
 		ft_sa(&stacks->a, true);
-	ft_pa(&stacks->a, &stacks->b);
+	ft_pa(&stacks->a, &stacks->b, stacks);
 }
 
 static void	ft_get_min_ins_score(t_stacks *stacks, t_score *score)
@@ -38,14 +38,16 @@ static void	ft_get_min_ins_score(t_stacks *stacks, t_score *score)
 	t_stack	*b;
 
 	min = -1;
-	a = ft_top_stack(stacks->a);
+	a = stacks->a;
+	stacks->a = ft_top_stack(stacks->a);
 	b = ft_top_stack(stacks->b);
 	while (b)
 	{
-		min = ft_finding_place(a, b, score, min);
-		a = ft_top_stack(stacks->a);
+		min = ft_finding_place(stacks, b, score, min);
+		stacks->a = ft_top_stack(stacks->a);
 		b = b->prev;
 	}
+	stacks->a = a;
 }
 
 static void	ft_execute(t_stacks *stacks, t_score *score)
@@ -66,7 +68,7 @@ static void	ft_execute(t_stacks *stacks, t_score *score)
 			ft_rrb(&stacks->b, true);
 		score->count_b--;
 	}
-	ft_pa(&stacks->a, &stacks->b);
+	ft_pa(&stacks->a, &stacks->b, stacks);
 }
 
 static void	ft_push_all_to_a(t_stacks *stacks)
@@ -76,18 +78,18 @@ static void	ft_push_all_to_a(t_stacks *stacks)
 	score = (t_score *)malloc(sizeof(t_score));
 	if (!score)
 		exit(EXIT_FAILURE);
-	while (ft_get_stack_size(stacks->b) != 0)
+	while (stacks->size_b != 0)
 	{
 		score->count_a = -1;
 		score->count_b = -1;
 		score->dest_a = 0;
 		score->dest_b = 0;
-		ft_count_score_to_elem(stacks->a, ft_get_stack_size(stacks->a));
-		ft_count_score_to_elem(stacks->b, ft_get_stack_size(stacks->b));
+		ft_count_score_to_elem(stacks->a, stacks->size_a);
+		ft_count_score_to_elem(stacks->b, stacks->size_b);
 		ft_get_min_ins_score(stacks, score);
 		ft_execute(stacks, score);
 	}
-	if ((ft_count_to_min(stacks->a, stacks->min)) > stacks->size / 2)
+	if ((ft_count_to_min(stacks->a, stacks->min)) > stacks->size_a / 2)
 		while (ft_top_stack(stacks->a)->data != stacks->min)
 			ft_rra(&stacks->a, true);
 	else

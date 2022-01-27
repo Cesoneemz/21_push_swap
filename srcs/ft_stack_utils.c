@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:46:18 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/26 13:42:54 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:38:35 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	ft_push_back(t_stack *stack, int data)
 	stack->next = node;
 	node->prev = stack;
 	node->next = NULL;
-	node->order = -1;
 	node->score = 0;
 	node->rotate = 0;
 	node->data = data;

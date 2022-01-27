@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:03:45 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/26 14:32:25 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:42:36 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ static void	ft_free_all(int argc, char **sa, t_stacks *stacks, int *str)
 	ft_free_stacks(&stacks);
 }
 
-static void	ft_sort_delegate(t_stacks *stacks, char **split_argv)
+static void	ft_sort_delegate(t_stacks *stacks)
 {
 	if (stacks->size <= 5)
 		ft_sort_small_stack(stacks);
 	else if (stacks->size <= 100)
 		ft_insertion_sort(stacks);
 	else
-		ft_sort_big_stack(ft_countword(split_argv), stacks);
+		ft_insertion_sort(stacks);
 }
 
 int	main(int argc, char **argv)
@@ -52,10 +52,10 @@ int	main(int argc, char **argv)
 		ft_free_args(argc, split_argv);
 		return (0);
 	}
-	stacks = ft_create_stacks(ft_countword(split_argv), split_argv, str);
+	stacks = ft_create_stacks(ft_countword(split_argv), split_argv);
 	if (!stacks)
 		return (0);
-	ft_sort_delegate(stacks, split_argv);
+	ft_sort_delegate(stacks);
 	ft_free_all(argc, split_argv, stacks, str);
 	return (0);
 }

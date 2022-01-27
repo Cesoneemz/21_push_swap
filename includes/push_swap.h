@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/26 15:25:05 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:44:23 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef struct s_stacks
 	int		max;
 	int		median;
 	int		size;
+	int		size_a;
+	int		size_b;
 }				t_stacks;
 
 typedef enum s_bool
@@ -59,7 +61,7 @@ int				ft_countword(char **split_argv);
 
 /* STACKS INITIALIZATION */
 
-t_stacks		*ft_create_stacks(int argc, char **argv, int *result);
+t_stacks		*ft_create_stacks(int argc, char **argv);
 t_stack			*ft_create_stack(int value);
 
 /* VALIDATION */
@@ -81,7 +83,7 @@ t_stack			*ft_top_stack(t_stack *stack);
 void			ft_pop_back(t_stack **stack);
 void			ft_push_back(t_stack *stack, int data);
 void			ft_count_score_to_elem(t_stack *stack, int size);
-int				ft_finding_place(t_stack *a, t_stack *b, \
+int				ft_finding_place(t_stacks *stacks, t_stack *b, \
 				t_score *score, int min);
 int				ft_count_to_min(t_stack *a, int min);
 void			ft_get_mmm(t_stacks *stacks);
@@ -93,8 +95,8 @@ void			ft_sa(t_stack **stack, t_bool writeable);
 void			ft_sb(t_stack **stack, t_bool writeable);
 void			ft_ss(t_stack **a, t_stack **b);
 
-void			ft_pa(t_stack **a, t_stack **b);
-void			ft_pb(t_stack **a, t_stack **b);
+void			ft_pa(t_stack **a, t_stack **b, t_stacks *stacks);
+void			ft_pb(t_stack **a, t_stack **b, t_stacks *stacks);
 
 void			ft_ra(t_stack **a, t_bool writeable);
 void			ft_rb(t_stack **b, t_bool writeable);
@@ -107,7 +109,6 @@ void			ft_rrr(t_stack **a, t_stack **b);
 /* SORTING ALGORITHMS */
 
 void			ft_sort_small_stack(t_stacks *stacks);
-void			ft_sort_big_stack(int argc, t_stacks *stacks);
 void			ft_insertion_sort(t_stacks *stacks);
 
 /* FREE ALL */
