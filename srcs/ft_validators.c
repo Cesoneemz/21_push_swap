@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:06:25 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 15:52:40 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:38:43 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ t_bool	ft_validate_data(int argc, char **argv)
 		jndex = 0;
 		while (argv[index][jndex])
 		{
-			if (!ft_is_number(argv[index]) || !ft_check_only_spaces(argv[index]))
+			if (!ft_is_number(argv[index]) \
+			|| !ft_check_only_spaces(argv[index]))
 				return (false);
 			jndex++;
 		}

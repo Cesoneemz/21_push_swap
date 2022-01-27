@@ -6,7 +6,7 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:57:44 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 16:21:04 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:38:25 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_bool			ft_check_only_spaces(char *str);
 int				ft_strcmp(char *s1, char *s2);
 long int		ft_long_atoi(const char *str);
 t_bool			ft_is_number(char *num);
-int				ft_write_error();
+int				ft_write_error(void);
 
 /* STACK UTILS */
 
@@ -97,8 +97,10 @@ void			ft_sa(t_stack **stack, t_bool writeable);
 void			ft_sb(t_stack **stack, t_bool writeable);
 void			ft_ss(t_stack **a, t_stack **b, t_bool writeable);
 
-void			ft_pa(t_stack **a, t_stack **b, t_stacks *stacks, t_bool writeable);
-void			ft_pb(t_stack **a, t_stack **b, t_stacks *stacks, t_bool writeable);
+void			ft_pa(t_stack **a, t_stack **b, t_stacks *stacks, \
+				t_bool writeable);
+void			ft_pb(t_stack **a, t_stack **b, t_stacks *stacks, \
+				t_bool writeable);
 
 void			ft_ra(t_stack **a, t_bool writeable);
 void			ft_rb(t_stack **b, t_bool writeable);
