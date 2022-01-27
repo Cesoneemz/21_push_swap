@@ -6,12 +6,11 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 15:03:45 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 16:25:30 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:41:33 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 static void	ft_free_all(int argc, char **sa, t_stacks *stacks, int *str)
 {	

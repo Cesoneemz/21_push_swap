@@ -6,12 +6,11 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 15:07:19 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 12:35:07 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:41:01 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 static t_bool	ft_smaller_elem_detect(t_stack *a, int buf, int src)
 {

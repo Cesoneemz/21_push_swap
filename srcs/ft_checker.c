@@ -6,13 +6,11 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:12:18 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 16:39:46 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:40:52 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <fcntl.h>
-#include <stdio.h>
 
 static void	ft_check_command(char *line, t_stacks *stacks)
 {

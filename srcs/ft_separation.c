@@ -6,12 +6,11 @@
 /*   By: wlanette <wlanette@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:30:34 by wlanette          #+#    #+#             */
-/*   Updated: 2022/01/27 15:43:31 by wlanette         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:41:15 by wlanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 char	**ft_argv_separate(int argc, char **argv)
 {
